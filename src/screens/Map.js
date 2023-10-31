@@ -1,16 +1,16 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { colors } from '../themes/colors'
 
-const Feed = () => {
+const Map = () => {
   return (
     <View style={styles.container}>
-      <Text>Profile</Text>
+      <Text>Map</Text>
     </View>
   )
 }
 
-export default Feed;
+export default Map
 
 const styles = StyleSheet.create({
   container:{

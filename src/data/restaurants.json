@@ -1,0 +1,230 @@
+[
+  {
+    "id": "1",
+    "categoria": "pizzeria",
+    "nombre_restaurant": "La Ranchería",
+    "direccion": "Alderete 920, Neuquen, Neuquen",
+    "localidad": "Neuquen",
+    "map": {
+      "latitud": -38.95055991067157,
+      "longitud": -68.04633233272251
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/larancheria.nqn/?hl=en",
+      "telefono": "2995965043",
+      "whatsapp": "2995965043",
+      "pagina_web": "https://larancheria.com/menu"
+    },
+    "vegan": false,
+    "menu": "pizzeria cerveza artesanal"
+  },
+  {
+    "id": "2",
+    "categoria": "restaurant vegetariano",
+    "nombre_restaurant": "Cuchí Resto Bar",
+    "direccion": "Gral Roca 89, Neuquen, Neuquen",
+    "localidad": "Neuquen",
+    "map": {
+      "latitud": -38.95154381814299,
+      "longitud": -68.06026957320157
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/cuchi_restobar/?hl=en",
+      "telefono": "",
+      "whatsapp": "",
+      "pagina_web": ""
+    },
+    "vegan": true,
+    "menu": "gourmet vegetariano vegan"
+  },
+  {
+    "id": "3",
+    "categoria": "pizzeria cerveceria",
+    "nombre_restaurant": "Arbol Cerveceria",
+    "direccion": "Puerto Gaboto 4854, Neuquen, Neuquen",
+    "localidad": "Neuquen",
+    "map": {
+      "latitud": -38.95141585375131,
+      "longitud": -68.12677336277774
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/arbolcerveza/?hl=en",
+      "telefono": "",
+      "whatsapp": "",
+      "pagina_web": "https://arbolcerveceria.com.ar/"
+    },
+    "vegan": true,
+    "menu": "pizzeria pizza cerveza artesanal vegetariano vegan"
+  },
+  {
+    "id": "4",
+    "categoria": "restaurant",
+    "nombre_restaurant": "Casa Juez",
+    "direccion": "Rivadavia 171, Neuquen, Neuquen",
+    "localidad": "Neuquen",
+    "map": {
+      "latitud": -38.95041573084922,
+      "longitud": -68.05965208775291
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/casa.juez/?hl=en",
+      "telefono": "",
+      "whatsapp": "",
+      "pagina_web": ""
+    },
+    "vegan": false,
+    "menu": "gourmet platos minutas pastas postres"
+  },
+  {
+    "id": "5",
+    "categoria": "vineria",
+    "nombre_restaurant": "Best Food",
+    "direccion": "Avenida Argentina 366, Neuquen, Neuquen",
+    "localidad": "Neuquen",
+    "map": {
+      "latitud": -38.950559462808705,
+      "longitud": -68.05965573275144
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/bestfoodnqn/?hl=en",
+      "telefono": "02994835076",
+      "whatsapp": "",
+      "pagina_web": ""
+    },
+    "vegan": false,
+    "menu": "picadas fiambres quesos vinos"
+  },
+  {
+    "id": "6",
+    "categoria": "pizzeria cerveza sandwich",
+    "nombre_restaurant": "El Patio de Franz",
+    "direccion": "Avenida Argentina 344, Neuquen, Neuquen",
+    "localidad": "Neuquen",
+    "map": {
+      "latitud": -38.950575636143185,
+      "longitud": -68.05948591653951
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/elpatiodefranz/?hl=en",
+      "telefono": "02994425151",
+      "whatsapp": "",
+      "pagina_web": ""
+    },
+    "vegan": false,
+    "menu": "pizza cerveza minutas hamburguesa sandwich"
+  },
+  {
+    "id": "7",
+    "categoria": "asiatica sushi",
+    "nombre_restaurant": "Sushi Top",
+    "direccion": "Independencia 124, Neuquen, Neuquen",
+    "localidad": "Neuquen",
+    "map": {
+      "latitud": -38.95367172731899,
+      "longitud": -68.05643984097492
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/sushitop.nqn/?hl=en",
+      "telefono": "",
+      "whatsapp": "0299154696805",
+      "pagina_web": ""
+    },
+    "vegan": true,
+    "menu": "sushi gyosas maki roll wok"
+  },
+  {
+    "id": "8",
+    "categoria": "heladeria",
+    "nombre_restaurant": "Pire",
+    "direccion": "Av. Coronel Olascoaga 1809, Neuquén, Neuquen",
+    "localidad": "Neuquen",
+    "map": {
+      "latitud": -38.97406664399675,
+      "longitud": -68.05993316654616
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/heladeriaspire/?hl=en",
+      "telefono": "02994429333",
+      "whatsapp": "",
+      "pagina_web": ""
+    },
+    "vegan": true,
+    "menu": "helados tortas heladas"
+  },
+  {
+    "id": "9",
+    "categoria": "heladeria",
+    "nombre_restaurant": "Cuore di Panna",
+    "direccion": "Av. Coronel Olascoaga 1809, Neuquén, Neuquen",
+    "localidad": "Neuquen",
+    "map": {
+      "latitud": -38.97406664399675,
+      "longitud": -68.05993316654616
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/heladeriaspire/?hl=en",
+      "telefono": "02994429333",
+      "whatsapp": "",
+      "pagina_web": ""
+    },
+    "vegan": false,
+    "menu": "helados tortas heladas cafe tortas"
+  },
+  {
+    "id": "10",
+    "categoria": "cerveceria pizzeria",
+    "nombre_restaurant": "Spazio Morrigan",
+    "direccion": "Gobernador Elordi 39, Neuquén, Neuquén",
+    "localidad": "Neuquen",
+    "map": {
+      "latitud": -38.949057619020266,
+      "longitud": -68.05974299999998
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/spazio_morrigan/",
+      "telefono": "0299 15-531-2033",
+      "whatsapp": "0299 15-531-2033",
+      "pagina_web": ""
+    },
+    "vegan": true,
+    "menu": "pizza cerveza tragos vegetariano"
+  },
+  {
+    "id": "11",
+    "categoria": "pasteleria",
+    "nombre_restaurant": "Frambuesa y Chocolate",
+    "direccion": "Caviahue, Neuquén, Neuquén",
+    "localidad": "Neuquen",
+    "map": {
+      "latitud": -38.94182635965671,
+      "longitud": -68.05636570375856
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/frambuesaychocolatenqn/",
+      "telefono": "02994025956",
+      "whatsapp": "",
+      "pagina_web": ""
+    },
+    "vegan": false,
+    "menu": "tortas tartas dulces cafe te infusiones pasteleria facturas viandas sandwich"
+  },
+  {
+    "id": "12",
+    "categoria": "restaurant",
+    "nombre_restaurant": "El Ciervo",
+    "direccion": "Avenida Argentina 219, Neuquén",
+    "localidad": "Neuquen",
+    "map": {
+      "latitud": -38.95259982410892,
+      "longitud": -68.05887417505106
+    },
+    "social_media": {
+      "instagram": "https://www.instagram.com/elciervorestaurante/",
+      "telefono": "02994423366",
+      "whatsapp": "",
+      "pagina_web": "https://elciervocatering.com/?gclid=Cj0KCQjwhfipBhCqARIsAH9msbmclX1i5JBuALGPP_1mZrnYiQ3Zl9Posmo88KAtEC2foCE1wOpm0pQaAr2qEALw_wcB"
+    },
+    "vegan": false,
+    "menu": "carnes minutas sandwich hamburguesa postre helado"
+  }
+]

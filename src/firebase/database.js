@@ -1,0 +1,1 @@
+export const databaseURL = 'https://resto-app-78bba-default-rtdb.firebaseio.com/'

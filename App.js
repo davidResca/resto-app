@@ -1,16 +1,16 @@
-/* import 'react-native-gesture-handler'; */
-import { NavigationContainer } from '@react-navigation/native';
-//import DrawerNav from './src/navigation/Drawer';
-import TabNav from './src/navigation/TabNav';
-
+import { useFonts } from 'expo-font';
+import { fonts } from './global/fonts';
+import MainNav from './src/navigation/MainNav';
 
 
 export default function App() {
+  const [fontsLoaded] = useFonts(fonts);
+
+  if (!fontsLoaded) {
+    return null;
+  };
   
   return (
-      <NavigationContainer>
-        {/* <DrawerNav /> */}
-        <TabNav />
-      </NavigationContainer>
+      <MainNav />
   );
 }

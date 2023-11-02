@@ -1,12 +1,14 @@
 import { Image, Pressable, StyleSheet, Text } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
-import { setCategorySelected } from '../redux/homeSlice'
 import { useDispatch } from 'react-redux'
+import { setCategorySelected } from '../redux/homeSlice'
 
+const CategoryCard = ({ item }) => {
+  //console.log(item);
 
-const Categories = ({item}) => {
   const navigation = useNavigation()
+
   const dispatch = useDispatch();
 
   const handlePress = () => {
@@ -23,23 +25,23 @@ const Categories = ({item}) => {
   )
 }
 
-export default Categories
+export default CategoryCard;
 
 const styles = StyleSheet.create({
-  container:{
-    borderWidth: 1,
+  container: {
+    borderWidth: .5,
     borderColor: 'white',
     margin: 4,
-    backgroundColor:'white',
-    borderRadius:14,
-    height:300,
-    width: 300,
+    backgroundColor: 'white',
+    borderRadius: 14,
+    height: 180,
+    width: 180,
     position: 'relative',
     overflow: 'hidden'
   },
   text: {
     padding: 6,
-    textTransform:'capitalize',
+    textTransform: 'capitalize',
     position: 'absolute',
     bottom: 0,
     color: 'white',
@@ -49,8 +51,9 @@ const styles = StyleSheet.create({
   },
   image: {
     resizeMode: 'cover',
-    borderRadius:14,
-    width: 300,
-    height:300,
+    borderRadius: 14,
+    width: '100%',
+    height: '100%',
+
   }
 })

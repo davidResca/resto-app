@@ -1,18 +1,23 @@
 import React from 'react'
 import { StyleSheet, Text, View, ScrollView, Pressable } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { foodCategories } from "../data/foodCategories.js";
+import { useGetCategoryDataQuery } from '../services/firebaseAPI.js'
 import { colors } from '../themes/colors'
 import SearchBar from '../components/SearchBar'
 import Categories from "../components/Categories";
 
 const Home = () => {
-  const data = [...foodCategories.slice(0, 4)];
-  
   const navigation = useNavigation();
+
+  const { data } = useGetCategoryDataQuery();
+  //console.log(data);
 
   const handlePress = () => {
     navigation.navigate('restaurantCategories')
+  }
+
+  if (!data) {
+    return (<View><Text>ESPERANDO</Text></View>)
   }
 
   return (
@@ -24,12 +29,12 @@ const Home = () => {
       <SearchBar />
 
       <View>
-      <Text style={{...styles.text, textAlign: 'left', padding: 3}}>Categorias</Text>
+        <Text style={{ ...styles.text, textAlign: 'left', padding: 3 }}>Categorias</Text>
         <ScrollView horizontal={true} >
-          {data.map((el, index) => (<Categories item={el} key={index} />))}
           <Pressable style={styles.button} onPress={handlePress}>
             <Text style={styles.buttonText}>Ver todas</Text>
           </Pressable>
+          {data.map((el, index) => (el.id <= 4 && <Categories item={el} key={index} />))}
         </ScrollView>
       </View>
     </View>
@@ -42,7 +47,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    gap:45,
+    gap: 45,
     backgroundColor: colors.black,
   },
   textContainer: {
@@ -59,7 +64,7 @@ const styles = StyleSheet.create({
     color: colors.isabelline,
   },
   button: {
-    backgroundColor: colors.isabelline, 
+    backgroundColor: colors.isabelline,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,

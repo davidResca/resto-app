@@ -1,3 +1,5 @@
+import { Provider} from 'react-redux';
+import { store } from './src/redux/store';
 import { useFonts } from 'expo-font';
 import { fonts } from './global/fonts';
 import MainNav from './src/navigation/MainNav';
@@ -11,6 +13,8 @@ export default function App() {
   };
   
   return (
+    <Provider store={store}>
       <MainNav />
+    </Provider>
   );
 }

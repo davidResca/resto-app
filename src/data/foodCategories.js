@@ -7,7 +7,7 @@ export const foodCategories = [
   {
     id: 2,
     food: 'asiatica sushi',
-    photo: 'https://images.unsplash.com/photo-1615361200098-9e630ec29b4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2864&q=80',
+    photo: 'https://images.unsplash.com/photo-1615361200098-9e630ec29b4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2864&q=80'
   },
   {
     id: 3,
@@ -43,6 +43,5 @@ export const foodCategories = [
     id: 9,
     food: 'helados',
     photo: 'https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2874&q=80'
-  },
-
+  }
 ]

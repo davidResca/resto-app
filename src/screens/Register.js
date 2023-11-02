@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native'
 import React, { useState } from 'react'
 import { colors } from '../themes/colors';
 
-
 // import { auth } from '../firebase/firebase_auth'
 // import createUserWithEmailAndPassword from 'firebase/auth'
 

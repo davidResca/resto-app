@@ -1,1 +1,1 @@
-export const databaseURL = 'https://resto-app-78bba-default-rtdb.firebaseio.com/'
+export const base_url = "https://resto-app-cc0a6-default-rtdb.firebaseio.com/"

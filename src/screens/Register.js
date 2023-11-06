@@ -1,9 +1,7 @@
 import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native'
 import React, { useState } from 'react'
 import { colors } from '../themes/colors';
-
-// import { auth } from '../firebase/firebase_auth'
-// import createUserWithEmailAndPassword from 'firebase/auth'
+import { register } from "../firebase/firebase_auth";
 
 const Register = ({ navigation }) => {
 
@@ -13,13 +11,13 @@ const Register = ({ navigation }) => {
   const handleRegister = async () => {
     console.log('registrando...');
 
-    /*     try {
-          const response = await createUserWithEmailAndPassword(auth, email, password)
-          
-          console.log(response);
-        } catch {
-    
-        } */
+    try {
+      const response = await register({ email, password });
+      console.log(response);
+      navigation.navigate('login')
+    } catch (e) {
+      console.error('error', e);
+    }
   }
 
   return (

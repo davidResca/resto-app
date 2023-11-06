@@ -6,7 +6,7 @@ import { colors } from '../themes/colors';
 
 const RestaurantCategories = () => {
   const { data } = useGetCategoryDataQuery();
-  // console.log(data);
+
   return (
     <View style={styles.container}>
       <View>

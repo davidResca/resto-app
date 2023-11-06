@@ -13,7 +13,6 @@ export const restoApi = createApi({
          getProductData: builder.query({
             query: () => 'productData.json',
         }),
-        /* 
         getImage: builder.query({
             query: () => "image.json",
         }),
@@ -23,12 +22,12 @@ export const restoApi = createApi({
                 method: "PUT",
                 body: image,
             })
-        }) */
+        })
     })
 });
 
 
 
 
-export const { useGetCategoryDataQuery , useGetProductDataQuery /*, useGetImageQuery, usePutImageMutation */ } = restoApi;
+export const { useGetCategoryDataQuery , useGetProductDataQuery, useGetImageQuery, usePutImageMutation } = restoApi;
 

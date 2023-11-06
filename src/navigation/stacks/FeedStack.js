@@ -7,7 +7,7 @@ import Story from '../../screens/Story';
 const Stack = createNativeStackNavigator();
 const FeedStack = () => {
 	return (
-		<Stack.Navigator initialRouteName='Feed' /* screenOptions={{ headerShown: false }} */>
+		<Stack.Navigator initialRouteName='Feed' screenOptions={{ headerShown: false }}>
 			<Stack.Screen name='Feed' component={Feed} />
 			<Stack.Screen name='Story' component={Story} />
 		</Stack.Navigator>

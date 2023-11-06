@@ -10,7 +10,6 @@ const Home = () => {
   const navigation = useNavigation();
 
   const { data } = useGetCategoryDataQuery();
-  //console.log(data);
 
   const handlePress = () => {
     navigation.navigate('restaurantCategories')
@@ -23,7 +22,7 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <View style={styles.textContainer}>
-        <Text style={styles.title}>★ ¡Hola! ★</Text>
+        <Text style={styles.title}>¡Hola!</Text>
         <Text style={styles.text}>¿Qué te gustaría comer hoy?</Text>
       </View>
       <SearchBar />
@@ -31,10 +30,10 @@ const Home = () => {
       <View>
         <Text style={{ ...styles.text, textAlign: 'left', padding: 3 }}>Categorias</Text>
         <ScrollView horizontal={true} >
+          {data.map((el, index) => (el.id <= 4 && <Categories item={el} key={index} />))}
           <Pressable style={styles.button} onPress={handlePress}>
             <Text style={styles.buttonText}>Ver todas</Text>
           </Pressable>
-          {data.map((el, index) => (el.id <= 4 && <Categories item={el} key={index} />))}
         </ScrollView>
       </View>
     </View>

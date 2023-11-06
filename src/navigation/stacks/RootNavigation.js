@@ -9,7 +9,7 @@ import RestaurantDetail from '../../screens/RestaurantDetail';
 const Stack = createNativeStackNavigator();
 const RootNavigation = () => {
 	return (
-		<Stack.Navigator initialRouteName='home' /* screenOptions={{ headerShown: false }} */>
+		<Stack.Navigator initialRouteName='home' screenOptions={{ headerShown: false }}>
 			<Stack.Screen name='home' component={Home} />
 			<Stack.Screen name='restaurantCategories' component={RestaurantCategories} />
 			<Stack.Screen name='restaurantByCategory' component={RestaurantByCategory} />

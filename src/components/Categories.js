@@ -12,7 +12,6 @@ const Categories = ({item}) => {
   const handlePress = () => {
     navigation.navigate('restaurantByCategory')
     dispatch(setCategorySelected(item.food));
-    console.log('EN Categories',item.food);
   }
 
   return (

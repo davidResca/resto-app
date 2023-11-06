@@ -1,14 +1,28 @@
 import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native'
 import React, { useState } from 'react'
 import { colors } from '../themes/colors';
+import { login } from "../firebase/firebase_auth";
+import { useDispatch } from 'react-redux';
+import { setUser, setIdToken } from '../redux/authSlice';
+
 
 const Login = ({ navigation }) => {
-
+  const dispatch = useDispatch()
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const handleLogin = () => {
-    console.log('login')
+  const handleLogin = async () => {
+    console.log('intentando login...')
+
+    try {
+      const response = await login({ email, password })
+      const userMailResponse = response.user.email;
+      console.log(response);
+      dispatch(setUser(userMailResponse))
+      dispatch(setIdToken(response._tokenResponse.idToken))
+    } catch (e) {
+      console.error('error', e)
+    }
   }
 
   return (

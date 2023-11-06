@@ -36,12 +36,10 @@ const RestaurantByCategory = () => {
           ({ item }) => (<RestaurantCard item={item} />)
         }
       />
-
       <Pressable onPress={goBack}>
         <Text>ir Atrás</Text>
       </Pressable >
       <Text>RestaurantByCategory</Text>
-
     </View>
   )
 }

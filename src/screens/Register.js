@@ -13,7 +13,7 @@ const Register = ({ navigation }) => {
 
     try {
       const response = await register({ email, password });
-      console.log(response);
+      //console.log(response);
       navigation.navigate('login')
     } catch (e) {
       console.error('error', e);

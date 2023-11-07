@@ -4,6 +4,7 @@ import { colors } from '../themes/colors';
 import { login } from "../firebase/firebase_auth";
 import { useDispatch } from 'react-redux';
 import { setUser, setIdToken } from '../redux/authSlice';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const Login = ({ navigation }) => {
@@ -12,14 +13,14 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState();
 
   const handleLogin = async () => {
-    console.log('intentando login...')
-
+    
     try {
-      const response = await login({ email, password })
-      const userMailResponse = response.user.email;
-      console.log(response);
-      dispatch(setUser(userMailResponse))
-      dispatch(setIdToken(response._tokenResponse.idToken))
+      console.log('intentando login...')
+      const response = await login({ email, password });
+      AsyncStorage.setItem('userMail', response.user.email);
+      AsyncStorage.setItem('userIdToken', response._tokenResponse.idToken);
+      dispatch(setUser(response.user.email));
+      dispatch(setIdToken(response._tokenResponse.idToken));
     } catch (e) {
       console.error('error', e)
     }

@@ -1,38 +1,54 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { colors } from '../themes/colors';
 import * as Location from 'expo-location';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MapView from 'react-native-maps'
-import { useSelector } from 'react-redux';
+
 
 
 const Map = () => {
-  const [errorMsg, setErrorMsg] = useState();
-  const [location, setLocation] = useState();
-  const getLatLong = async () => {
+  const [errorMsg, setErrorMsg] = useState(null);
+  const [location, setLocation] = useState(null);
 
+  const initialRegion = {
+    latitude: -38.95131977217179,
+    longitude: -68.05915676471234,
+    latitudeDelta: 0.10,
+    longitudeDelta: 0.10,
+  };
+  const getLocation = async () => {
     const { status } = await Location.requestForegroundPermissionsAsync();
-
-
     if (status !== 'granted') {
       setErrorMsg('El permiso para acceder a la ubicación fué denegado');
       return;
     }
-
     const location = await Location.getCurrentPositionAsync({})
     setLocation(location);
-  };
+  }
 
-  console.log(location);
+  useEffect(() => {
+    getLocation();
+  }, [location, errorMsg])
+
+  if (!location) {
+    return (<View><Text>Cargando</Text></View>)
+  }
 
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <MapView style={styles.map} />
-        <Pressable onPress={getLatLong}>
-          <Text>OBTENER COORDENADAS</Text>
-        </Pressable>
+        <MapView
+          pointerEvents={true}
+          showsUserLocation={true}
+          style={styles.map}
+          initialRegion={initialRegion}
+          region={{
+            latitude: location.coords.latitude,
+            longitude: location.coords.longitude,
+          }}
+        />
+
       </View>
     </SafeAreaView>
   )
@@ -47,6 +63,6 @@ const styles = StyleSheet.create({
   },
   map: {
     width: '100%',
-    height: '90%'
+    height: '100%'
   }
 })

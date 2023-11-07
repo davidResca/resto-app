@@ -1,15 +1,15 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Profile from '../../screens/Profile';
-import Story from '../../screens/Story';
+import Dashboard from '../../screens/Dashboard'
 
 
 const Stack = createNativeStackNavigator();
 const ProfileStack = () => {
 	return (
-		<Stack.Navigator initialRouteName='Profile' screenOptions={{ headerShown: false }}>
+		<Stack.Navigator initialRouteName='Dashboard' screenOptions={{ headerShown: false }}>
+			<Stack.Screen name='dashboard' component={Dashboard} />
 			<Stack.Screen name='Profile' component={Profile} />
-			<Stack.Screen name='story' component={Story} />
 		</Stack.Navigator>
 	)
 }

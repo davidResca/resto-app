@@ -5,6 +5,9 @@ import { useGetCategoryDataQuery } from '../services/firebaseAPI.js'
 import { colors } from '../themes/colors'
 import SearchBar from '../components/SearchBar'
 import Categories from "../components/Categories";
+import Header from '../components/Header.js'
+import { SafeAreaView } from 'react-native-safe-area-context'
+
 
 const Home = () => {
   const navigation = useNavigation();
@@ -20,13 +23,11 @@ const Home = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.textContainer}>
         <Text style={styles.title}>¡Hola!</Text>
-        <Text style={styles.text}>¿Qué te gustaría comer hoy?</Text>
       </View>
       <SearchBar />
-
       <View>
         <Text style={{ ...styles.text, textAlign: 'left', padding: 3 }}>Categorias</Text>
         <ScrollView horizontal={true} >
@@ -36,7 +37,7 @@ const Home = () => {
           </Pressable>
         </ScrollView>
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 

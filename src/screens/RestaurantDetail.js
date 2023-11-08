@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, StyleSheet, Pressable, Linking } from 'react-native';
+import { View, Text, Image, StyleSheet, Pressable, Linking, ScrollView } from 'react-native';
 import { useSelector } from 'react-redux';
 import * as Location from 'expo-location';
 import MapView from 'react-native-maps';
 import { Marker } from 'react-native-maps';
 import { colors } from '../themes/colors';
 import { FontAwesome } from '@expo/vector-icons';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const RestaurantDetail = ({ route }) => {
   const [errorMsg, setErrorMsg] = useState(null);
@@ -49,7 +50,7 @@ const RestaurantDetail = ({ route }) => {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image
         source={{ uri: item.img }}
         style={styles.img}
@@ -82,7 +83,7 @@ const RestaurantDetail = ({ route }) => {
       >
         <Marker coordinate={{ latitude: lat, longitude: long }} />
       </MapView>
-    </View>
+    </SafeAreaView>
   )
 }
 
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
   },
   img: {
     width: '100%',
-    height: 150,
+    height: 100,
     resizeMode: 'cover',
   },
   textContainer: {

@@ -17,10 +17,6 @@ const MainNav = () => {
         const userEmail = await AsyncStorage.getItem('userMail');
         const userIdToken = await AsyncStorage.getItem('userIdToken');
         userEmail ? setCheckedUser(userEmail) : setCheckedUser(user);
-
-        console.log('EN MAIN NAV', userEmail);
-        console.log('useSelector user', user);
-        console.log('User checked', checkedUser);
       } catch (e) {
         console.error(error);
       }

@@ -1,13 +1,19 @@
 import { Image, Pressable, StyleSheet, Text, View, ActivityIndicator } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
-
 import * as ImagePicker from 'expo-image-picker'
 import { useGetImageQuery, usePutImageMutation } from '../services/firebaseAPI';
+import Header from '../components/Header';
+import { colors } from '../themes/colors';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { setIdToken, setUser } from '../redux/authSlice';
+import { useDispatch } from 'react-redux';
+
 
 const Profile = () => {
 
   const [putImage, result] = usePutImageMutation();
-  const { data, isLoading, error, refetch } = useGetImageQuery();
+  const { data, isLoading, refetch } = useGetImageQuery();
+  const dispatch = useDispatch();
 
   const defaultImg = 'https://i.etsystatic.com/29388859/r/il/1852b1/3120127459/il_340x270.3120127459_kz1z.jpg';
 
@@ -45,9 +51,16 @@ const Profile = () => {
     }
   }
 
+  const closeSession = () => {
+    AsyncStorage.removeItem('userMail');
+    dispatch(setUser(null));
+    dispatch(setIdToken(null));
+  }
+
   return (
-    <SafeAreaView>
-      <View style={styles.profileContainer}>
+    <SafeAreaView style={styles.profileContainer}>
+      <Header title={'Perfil'} screen={'Dashboard'} />
+      <View >
         <View>
           {isLoading ? (
             <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center' }}>
@@ -64,14 +77,15 @@ const Profile = () => {
         </View>
 
 
-        <View>
-          <Pressable onPress={pickImage}>
-            <Text>cambiar foto</Text>
+        <View style={styles.profileButtonContainer}>
+          <Pressable style={styles.profileButton} onPress={pickImage}>
+            <Text style={styles.profileButtonText}>cambiar foto</Text>
           </Pressable>
-        </View>
-        <View>
-          <Pressable onPress={openCamera}>
-            <Text>Tomar Foto</Text>
+          <Pressable style={styles.profileButton} onPress={openCamera}>
+            <Text style={styles.profileButtonText}>Tomar Foto</Text>
+          </Pressable>
+          <Pressable style={styles.profileButton} onPress={closeSession}>
+            <Text style={styles.profileButtonText}>Cerrar Sesión</Text>
           </Pressable>
         </View>
       </View>
@@ -83,7 +97,8 @@ export default Profile
 
 const styles = StyleSheet.create({
   profileContainer: {
-    justifyContent: 'center',
+    flex: 1,
+    backgroundColor: colors.black,
     alignItems: 'center',
   },
   profileImg: {
@@ -91,5 +106,19 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     width: 200,
     height: 200,
+  },
+  profileButtonContainer: {
+    marginTop: 20,
+    gap: 10,
+  },
+  profileButton: {
+    padding: 4,
+    borderWidth: .5,
+    backgroundColor: colors.viridian
+  },
+  profileButtonText: {
+    fontSize: 18,
+    textTransform: 'capitalize',
+    textAlign: 'center',
   }
 })

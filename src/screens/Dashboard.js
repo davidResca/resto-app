@@ -1,28 +1,31 @@
-import { View, Text, ActivityIndicator, Image } from 'react-native'
+import { Text, View, StyleSheet } from 'react-native'
 import React from 'react'
 import Header from '../components/Header'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { colors } from '../themes/colors'
 
-const Dashboard = () => {
+
+export default function Dashboard() {
   return (
-    <View>
-      <Header title={'Profile'}/>
+    <SafeAreaView style={styles.container}>
+      <Header title={'Dashboard'} screen={'Profile'} />
       <View>
-          {isLoading ? (
-            <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center' }}>
-              <ActivityIndicator style={{
-                flex: 1, marginTop: 10
-              }} size="large" color='#0000ff' />
-            </View>
-          ) : (
-            <Image
-              style={styles.profileImg}
-              source={{ uri: data ? data.image : defaultImg }}
-            />
-          )}
-        </View>
-      <Text>Dashboard</Text>
-    </View>
+        <Text style={styles.text}>Dashboard</Text>
+        <Text style={styles.text}>Click en foto de perfil para acceder a profile</Text>
+        <Text style={styles.text}>En construcción...</Text>
+      </View>
+    </SafeAreaView>
   )
 }
 
-export default Dashboard
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-between',
+    backgroundColor: colors.black,
+  },
+  text: {
+    color: colors.isabelline,
+    fontSize: 30,
+  }
+})

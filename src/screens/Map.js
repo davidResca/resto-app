@@ -6,7 +6,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import MapView from 'react-native-maps'
 
 
-
 const Map = () => {
   const [errorMsg, setErrorMsg] = useState(null);
   const [location, setLocation] = useState(null);
@@ -36,21 +35,18 @@ const Map = () => {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <MapView
-          pointerEvents={true}
-          showsUserLocation={true}
-          style={styles.map}
-          initialRegion={initialRegion}
-          region={{
-            latitude: location.coords.latitude,
-            longitude: location.coords.longitude,
-          }}
-        />
-
-      </View>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <MapView
+        pointerEvents={true}
+        showsUserLocation={true}
+        style={styles.map}
+        initialRegion={initialRegion}
+        region={{
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+        }}
+      />
+    </View>
   )
 }
 

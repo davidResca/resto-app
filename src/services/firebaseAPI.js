@@ -26,8 +26,5 @@ export const restoApi = createApi({
     })
 });
 
-
-
-
 export const { useGetCategoryDataQuery , useGetProductDataQuery, useGetImageQuery, usePutImageMutation } = restoApi;
 

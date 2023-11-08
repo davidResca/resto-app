@@ -9,11 +9,8 @@ const Register = ({ navigation }) => {
   const [password, setPassword] = useState("");
 
   const handleRegister = async () => {
-    console.log('registrando...');
-
     try {
       const response = await register({ email, password });
-      //console.log(response);
       navigation.navigate('login')
     } catch (e) {
       console.error('error', e);

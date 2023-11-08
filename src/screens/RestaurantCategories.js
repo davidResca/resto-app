@@ -3,12 +3,13 @@ import { View, FlatList, StyleSheet } from 'react-native'
 import { useGetCategoryDataQuery } from '../services/firebaseAPI';
 import CategoryCard from '../components/CategoryCard';
 import { colors } from '../themes/colors';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const RestaurantCategories = () => {
   const { data } = useGetCategoryDataQuery();
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View>
         <FlatList
           data={data}
@@ -20,7 +21,7 @@ const RestaurantCategories = () => {
           style={styles.categoryContainer}
         />
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 

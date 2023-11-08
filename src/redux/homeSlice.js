@@ -4,14 +4,17 @@ const homeSlice = createSlice({
   name: 'home',
   initialState: {
     categorySelected: null,
+    userSearch: null,
   },
   reducers: {
     setCategorySelected: (state, action) => {
       state.categorySelected = action.payload;
-      console.log('EN SLICE', state.categorySelected);
     },
+    setUserSearch: (state, action) => {
+      state.userSearch = action.payload;
+    }
   },
 });
 
-export const { setCategorySelected } = homeSlice.actions; 
+export const { setCategorySelected, setUserSearch } = homeSlice.actions; 
 export default homeSlice.reducer;

@@ -5,8 +5,7 @@ import { useGetProductDataQuery } from '../services/firebaseAPI'
 import { useSelector } from 'react-redux';
 import RestaurantCard from '../components/RestaurantCard';
 import { colors } from '../themes/colors'
-
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const RestaurantByCategory = () => {
   const navigation = useNavigation();
@@ -28,7 +27,7 @@ const RestaurantByCategory = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={filteredData}
         keyExtractor={(item) => item.id}
@@ -40,7 +39,7 @@ const RestaurantByCategory = () => {
         <Text>ir Atrás</Text>
       </Pressable >
       <Text>RestaurantByCategory</Text>
-    </View>
+    </SafeAreaView>
   )
 }
 
@@ -48,6 +47,7 @@ export default RestaurantByCategory;
 
 const styles = StyleSheet.create({
   container: {
+    flex:1,
     backgroundColor: colors.black,
   }
 })
